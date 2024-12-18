@@ -47,7 +47,7 @@ def search():
         
         weather_data = response.json()
         
-        location = customtkinter.CTkLabel(master=frame, text=f"WINDS for {weather_data["location"]["name"]}:", font=("Roboto", 24) )
+        location = customtkinter.CTkLabel(master=frame, text=f"WINDS for {weather_data['location']['name']}:", font=("Roboto", 24) )
         location.pack(pady=12, padx=10)
         
         
