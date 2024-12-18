@@ -31,7 +31,7 @@ def search():
     
     params = {
         'q' : city.get(),
-        'key' : api_key,
+        'key' : "2d062fefae34452dbd263355241812",
         'aqi' : "yes",
         'days' : '7' # TODO: const for now, could change later
     }
