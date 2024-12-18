@@ -25,14 +25,16 @@ city = customtkinter.CTkEntry(master=search_container, placeholder_text="City")
 city.pack(pady=12, padx=10,side='left')
 
 def search():
+    load_dotenv()
+    
     api_key = os.getenv("WEATHER_API_KEY")
 
     if not api_key:
-        raise ValueError("API key is not set.")
+        raise ValueError("API Key not found. Set it in your environment variables or .env file.")
     
     params = {
         'q' : city.get(),
-        'key' : "2d062fefae34452dbd263355241812",
+        'key' : api_key,
         'aqi' : "yes",
         'days' : '7' # TODO: const for now, could change later
     }
