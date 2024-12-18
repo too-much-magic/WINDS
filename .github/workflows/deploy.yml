@@ -1,0 +1,33 @@
+name: Run Weather API Script
+
+on:
+  push:  # Trigger workflow on push
+    branches:
+      - main  # Specify the branch to monitor
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Check out your repository
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Step 2: Set up Python
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      # Step 3: Install dependencies
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+
+      # Step 4: Run the script with the secret
+      - name: Run Weather API script
+        env:  # Pass secrets as environment variables
+          WEATHER_API_KEY: ${{ secrets.WEATHER_API_KEY }}
+        run: |
+          python weather_script.py
