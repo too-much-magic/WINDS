@@ -3,7 +3,7 @@ name: Run Weather API Script
 on:
   push:  # Trigger workflow on push
     branches:
-      - main  # Specify the branch to monitor
+      - master  # Specify the branch to monitor
 
 jobs:
   run-script:
