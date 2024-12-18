@@ -30,4 +30,4 @@ jobs:
         env:  # Pass secrets as environment variables
           WEATHER_API_KEY: ${{ secrets.WEATHER_API_KEY }}
         run: |
-          python weather_script.py
+          python main.py
